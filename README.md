@@ -1,7 +1,6 @@
 # FLASK WEB APP
 # SECURE FILE STORAGE ON CLOUD USING HYBRID CRYPTOGRAPHY
 
-NOTE: This project is in progress.
 
 Technologies: Flask, SQL, HTML/CSS, Js, Python, Cryptography, AWS
 
