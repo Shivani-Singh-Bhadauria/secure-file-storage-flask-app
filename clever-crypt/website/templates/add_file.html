@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Files{% endblock %} {% block content
+    %}
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <h1 align="center" style="color: white;">Files</h1>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+         <div class="col-12 col-md-10 col-lg-10 col-xl-8"></div>
+            <div class="card shadow-2-strong" style="border-radius: 1rem; width: 600px;">
+              <div class="card-body p-5 text-center">
+    <ul class="list-group list-group-flush" id="files">
+      {% for file in user.files %}
+      <li class="list-group-item" style="text-align: left;">
+        <div style="max-width: 400px;">
+          {{file.name}} 
+        </div>
+      <button style="float: right; margin-right: 10px;" type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" onClick="deleteFile({{ file.id }})">Delete</button>
+      
+      <a href="{{ url_for('views.download_file', file_id=file.id) }}" style="float: right; margin-right: 10px;" class="btn btn-primary" download>Download</a>
+        
+        {% endfor %}
+    
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" id="file" class="form-control">
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Upload File</button>
+      </div>
+    </form>    
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+    {% endblock %}
