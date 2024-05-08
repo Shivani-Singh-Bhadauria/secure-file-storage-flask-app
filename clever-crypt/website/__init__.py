@@ -9,8 +9,8 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:12345678@database-2.cp46uameys2q.ap-south-1.rds.amazonaws.com:3306/database_2'
+    app.config['SECRET_KEY'] = '' #provide any secret key
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@host:3306/database'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable tracking modifications for SQLAlchemy
 
     db.init_app(app)
